@@ -74,3 +74,30 @@ while True:
         resp = input("Deseja finalizar os cadastros (S/N)? ").upper()
         if resp == "S":
             break
+
+print("\n====MENU DE CONSULTAS E VENDAS====")
+print("\n1 - Consultar clientes")
+print("\n2 - Consultar funcionários")
+print("\n3 - Consultar produtos")
+print("\n4 - Consultar formas de pagamento")
+print("\n5 - Realizar uma venda")
+print("\n0 - Encerrar o sistema")
+opcao = int(input("\nEscolha uma opção: "))
+
+if opcao == 1:
+    print("\nSegue a lista de clientes:\n")
+    for cliente in cadastroCliente:
+        print(f"Código: {cliente['código']} | Nome: {cliente['nome']} | CPF: {cliente['cpf']}")
+elif opcao == 2:
+    print("\nSegue a lista de funcionários:\n")
+    for funcionario in cadastroFunc:
+        print(f"Código: {funcionario['código']} | Nome: {funcionario['nome']} | Cargo: {funcionario['cargo']}")
+elif opcao == 3:
+    print("\nSegue a lista de produtos:\n")
+    for produto in cadastroProd:
+        print(f"Produto: {produto['código']} | Nome: {produto['nome']} | Preço: {produto['preco']} | Quantidade em estoque: {produto['quantEstoq']}")
+elif opcao == 4:
+    print("\nSegue as opções de pagamento:\n")
+    opcaoPag = ("Dinheiro", "PIX", "Débito", "Crédito")
+    for i, forma in enumerate(opcaoPag, start=1):
+        print(f"Opção {i}: {forma}")
